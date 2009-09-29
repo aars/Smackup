@@ -13,10 +13,9 @@ except lib.Configuration.ConfigException, e:
     print "Configuration error: ", sys.exc_info()[1]
 except Exception, e:
     print "Unexpected error: ", sys.exc_info()[1]
-finally:
-    sys.exit('Exiting')
 
 Backup = lib.Backup.Backup(Config)
+RSync  = lib.RSync.RSync()
 
 if Backup.time_to_run():
         Backup.run()
